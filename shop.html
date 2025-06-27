@@ -42,7 +42,7 @@
 </div>
     
     <script>
-        const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxE5klyPe4QfL4ZARqQCmio7AG4nu25yw2MoZSr5OcSnBWpCsXC-JZiP__3_Mqpednz/exec'; // <-- INCOLLA QUI IL TUO URL
+        const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxveh3mvgjIcLgRjdimEVbDEZhSEMImB3dCk9-OQkqq3E18eAs4ncVrHKZK7nTYzGys/exec'; // <-- INCOLLA QUI IL TUO URL
         const driveImageUrl = "https://lh3.googleusercontent.com/d/";
         let allProducts = [], currentProduct = null, cart = [];
         let appliedCoupon = null;
@@ -193,35 +193,25 @@
         function saveCart() { try { localStorage.setItem('laMesolaShopCart', JSON.stringify({cart, coupon: appliedCoupon})); } catch(e) {} }
         function loadCart() { const saved = localStorage.getItem('laMesolaShopCart'); if (saved) { try { const data = JSON.parse(saved); cart = data.cart || []; appliedCoupon = data.coupon || null; } catch (e) { cart = []; appliedCoupon = null; } } updateCartUI(); }
 
-        async function handleCheckout() {
-            if(cart.length === 0) { alert("Il carrello è vuoto!"); return; }
-            const btn = document.getElementById('checkout-button');
-            btn.disabled = true; btn.textContent = 'Procedo...';
-            const dataToSend = {
-                action: 'createCheckout',
-                payload: {
-                    cart: cart,
-                    coupon: appliedCoupon ? appliedCoupon.code : null
-                }
-            };
-            try {
-                const response = await fetch(SCRIPT_URL, {
-                    method: 'POST',
-                    body: JSON.stringify(dataToSend),
-                    headers: { 'Content-Type': 'text/plain;charset=utf-8' },
-                });
-                if (!response.ok) throw new Error('Errore di rete dal server.');
-                const res = await response.json();
-                if (res.error) throw new Error(res.error);
-                if (res.url) { 
-                    localStorage.removeItem('laMesolaShopCart'); 
-                    window.location.href = res.url; 
-                } else { throw new Error("URL di checkout non ricevuto."); }
-            } catch(err) {
-                alert('Errore: ' + err.message);
-                btn.disabled = false; btn.textContent = 'Procedi al Checkout';
-            }
-        }
+        function handleCheckout() {
+    if(cart.length === 0) { alert("Il carrello è vuoto!"); return; }
+    const btn = document.getElementById('checkout-button');
+    btn.disabled = true;
+    btn.textContent = 'Procedo...';
+
+    const dataToSend = {
+        cart: cart,
+        coupon: appliedCoupon ? appliedCoupon.code : null
+    };
+
+    // Costruisce l'URL di reindirizzamento
+    const url = new URL(SCRIPT_URL);
+    url.searchParams.append('action', 'createCheckout');
+    url.searchParams.append('payload', JSON.stringify(dataToSend));
+
+    // Reindirizza l'utente a questo URL. Il backend poi lo reindirizzerà a Stripe.
+    window.location.href = url.href;
+}
     </script>
 </body>
 </html>
