@@ -16,31 +16,21 @@
       box-sizing: border-box;
     }
 
-    html, body {
-      height: 100%;
-      font-family: 'Merienda', sans-serif;
-      color: white;
-      overflow: hidden;
-    }
-
     body {
+      font-family: 'Merienda', sans-serif;
       background: url('https://makexp.it//xstore_temp/p,it,2025,00,comune_di_mesola,x,9574,giovanni_crivellari.jpg') no-repeat center center fixed;
       background-size: cover;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      color: white;
+      text-align: center;
+      min-height: 100vh;
     }
 
     .overlay {
-      position: relative;
       background: rgba(0,0,0,0.85);
       padding: 40px 30px;
-      width: 90%;
       max-width: 700px;
-      height: 90%;
-      overflow-y: auto;
+      margin: 50px auto;
       border-radius: 18px;
-      text-align: center;
     }
 
     .overlay img.logo {
@@ -57,12 +47,10 @@
       margin-bottom: 15px;
     }
 
-    p {
+    p.sottotitolo {
       font-size: 1.6em;
       margin-bottom: 30px;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
+      white-space: normal;
     }
 
     .highlight {
@@ -108,16 +96,15 @@
     @media (max-width: 768px) {
       .overlay {
         padding: 30px 20px;
-        height: 95%;
+        margin: 20px;
       }
 
       h1 {
         font-size: 2.5em;
       }
 
-      p {
+      p.sottotitolo {
         font-size: 1.3em;
-        white-space: normal;
       }
 
       .button {
@@ -139,7 +126,7 @@
   <div class="overlay">
     <img class="logo" src="https://github.com/lamesolashop/la-mesola/blob/main/logo.png?raw=true" alt="Logo La Mesola" />
     <h1>La Mesola</h1>
-    <p><span class="highlight">G</span>in e <span class="highlight">A</span>mari artigianali dal cuore del Delta del Po</p>
+    <p class="sottotitolo"><span class="highlight">G</span>in e <span class="highlight">A</span>mari artigianali dal cuore del Delta del Po</p>
 
     <div class="social-icons">
       <a href="#"><i class="fa-brands fa-instagram"></i></a>
