@@ -3,17 +3,13 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>La Mesola - Gin e Amari artigianali</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
-        integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>La Mesola - Gin & Amari Artigianali</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500&family=Saira:wght@800&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
     <style>
         * {
             box-sizing: border-box;
@@ -24,7 +20,6 @@
 
         body {
             height: 100vh;
-            position: relative;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -33,11 +28,10 @@
         }
 
         h2 {
-            font-family: 'Saira', sans-serif;
-            font-weight: 600;
+            font-weight: 700;
             text-transform: uppercase;
             color: white;
-            text-shadow: 0 0 1px transparent, 0 1px 2px rgb(0 0 0 / 50%);
+            text-shadow: 0 0 3px rgba(0, 0, 0, 0.7);
             font-size: 3em;
             text-align: center;
         }
@@ -53,38 +47,31 @@
         section div {
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 15px;
             width: 100%;
             max-width: 600px;
-            margin: 0 auto;
-            padding: 20px;
-            justify-content: center;
-            align-items: center;
-            background: rgba(0, 0, 0, 0.6);
-            border-radius: 10px;
+            padding: 25px;
+            background: rgba(0, 0, 0, 0.65);
+            border-radius: 12px;
         }
 
         section div img {
-            width: 100px;
-            aspect-ratio: 1;
+            width: 120px;
             border-radius: 50%;
-            box-shadow: 0 0 8px 1px lightblue;
-            margin-top: 10px;
+            box-shadow: 0 0 8px 2px #ffffff88;
         }
 
         a {
             display: flex;
-            width: 100%;
             align-items: center;
             justify-content: center;
-            border: 1.5px solid white;
-            padding: 10px;
+            border: 2px solid #fff;
+            padding: 12px;
             color: white;
             text-decoration: none;
-            gap: 20px;
-            border-radius: 4px;
-            transition-duration: 200ms;
-            background: transparent;
+            gap: 15px;
+            border-radius: 5px;
+            transition: all 0.2s;
         }
 
         a:hover {
@@ -93,7 +80,7 @@
         }
 
         a i {
-            font-size: 1.3em;
+            font-size: 1.2em;
         }
 
         footer {
@@ -103,37 +90,31 @@
         }
 
         footer a {
-            display: inline-flex;
-            width: auto;
-            margin-top: 10px;
-            border-radius: 4px;
-            padding: 8px 15px;
-            border: 1.5px solid white;
             color: white;
             text-decoration: none;
+            border: 1.5px solid white;
+            padding: 6px 12px;
+            border-radius: 5px;
         }
 
         footer a:hover {
             background: white;
             color: #0f172a;
         }
-
     </style>
 </head>
 
 <body>
     <section>
         <div>
-            <h2>LA MESOLA</h2>
-            <img src="https://drive.google.com/uc?export=view&id=1gqwyKrWcHtS7mMUHrNvLFWIh-f19bcX_" alt="Logo La Mesola" />
-            <p style="color: white; text-align: center;">Gin e Amari artigianali dal cuore del Delta del Po</p>
+            <h2>La Mesola</h2>
+            <img src="https://drive.google.com/uc?export=view&id=1gqwyKrWcHtS7mMUHrNvLFWIh-f19bcX_" alt="Logo La Mesola">
+            <p style="color: white;">Gin e Amari artigianali dal cuore del Delta del Po</p>
 
-            <div>
-                <a href="#"><i class="fa-solid fa-wine-bottle"></i><p>Scopri i prodotti</p></a>
-                <a href="#"><i class="fa-solid fa-store"></i><p>Shop online</p></a>
-                <a href="#"><i class="fa-solid fa-book-open"></i><p>La nostra storia</p></a>
-                <a href="#"><i class="fa-solid fa-phone"></i><p>Contattaci</p></a>
-            </div>
+            <a href="#" target="_blank"><i class="fa-solid fa-wine-bottle"></i> Acquista il nostro Gin</a>
+            <a href="#" target="_blank"><i class="fa-solid fa-book"></i> La nostra storia</a>
+            <a href="#" target="_blank"><i class="fa-brands fa-instagram"></i> Seguici su Instagram</a>
+            <a href="#" target="_blank"><i class="fa-solid fa-envelope"></i> Contattaci</a>
         </div>
     </section>
 
