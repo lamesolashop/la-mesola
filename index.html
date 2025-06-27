@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>La Mesola - Gin Artigianale</title>
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" />
+
     <style>
         * {
             box-sizing: border-box;
@@ -17,24 +19,25 @@
 
         body {
             height: 100vh;
-            position: relative;
             display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
-            background: url('https://makexp.it//xstore_temp/p,it,2025,00,comune_di_mesola,x,9574,giovanni_crivellari.jpg') no-repeat center center fixed;
+            background: url('https://github.com/lamesolashop/la-mesola/blob/main/castello.jpg?raw=true') no-repeat center center fixed;
             background-size: cover;
             color: white;
             text-align: center;
         }
 
-        h2 {
-            font-family: 'Saira', sans-serif;
-            font-weight: 600;
-            text-transform: uppercase;
-            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7);
-            font-size: 3em;
-            margin-bottom: 0.2em;
+        .container {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 30px 40px;
+            border-radius: 12px;
+            max-width: 600px;
+            width: 90%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
         }
 
         img.logo {
@@ -42,21 +45,28 @@
             height: auto;
             border-radius: 50%;
             box-shadow: 0 0 8px 2px lightblue;
-            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-family: 'Saira', sans-serif;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 3em;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7);
         }
 
         a.button {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
+            display: block;
+            width: 100%;
+            max-width: 300px;
+            margin: 0 auto;
+            padding: 12px 0;
             border: 2px solid white;
-            padding: 10px 25px;
-            margin: 8px 0;
             border-radius: 6px;
             color: white;
             text-decoration: none;
-            font-weight: 500;
-            gap: 10px;
+            font-weight: 600;
+            font-size: 1.1em;
             transition: background-color 0.3s, color 0.3s;
         }
 
@@ -68,13 +78,13 @@
         .social-icons {
             display: flex;
             justify-content: center;
-            gap: 15px;
-            margin: 15px 0 40px 0;
+            gap: 25px;
+            margin-top: 15px;
         }
 
         .social-icons a {
             color: white;
-            font-size: 1.5em;
+            font-size: 1.8em;
             text-decoration: none;
             transition: color 0.3s;
         }
@@ -82,40 +92,27 @@
         .social-icons a:hover {
             color: lightblue;
         }
-
-        footer {
-            display: none;
-        }
     </style>
-    <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
-    />
 </head>
 
 <body>
-    <img
-        class="logo"
-        src="https://github.com/lamesolashop/la-mesola/blob/main/logo.png?raw=true"
-        alt="Logo La Mesola"
-    />
-    <h2>La Mesola</h2>
-    <p>Gin Artigianale del Delta del Po, con radicchio locale e maturato nelle acque della laguna.</p>
+    <div class="container">
+        <img class="logo" src="https://github.com/lamesolashop/la-mesola/blob/main/logo.png?raw=true" alt="Logo La Mesola" />
+        <h2>La Mesola</h2>
 
-    <div class="social-icons">
-        <a href="https://www.instagram.com/la_mesola_gin/" target="_blank" aria-label="Instagram">
-            <i class="fa-brands fa-instagram"></i>
-        </a>
-        <a href="https://www.facebook.com/la_mesola_gin" target="_blank" aria-label="Facebook">
-            <i class="fa-brands fa-facebook"></i>
-        </a>
-        <a href="https://www.linkedin.com/company/la-mesola" target="_blank" aria-label="LinkedIn">
-            <i class="fa-brands fa-linkedin"></i>
-        </a>
+        <a href="https://shop.lamesola.it" class="button" target="_blank" rel="noopener">Shop</a>
+        <a href="https://lamesola.it/la-nostra-storia" class="button" target="_blank" rel="noopener">La nostra storia</a>
+        <a href="https://forms.gle/UPLGDQ5JU766MUcn9" class="button" target="_blank" rel="noopener">Contattaci</a>
+        <a href="https://lamesola.it" class="button" target="_blank" rel="noopener">Visita il nostro sito</a>
+
+        <div class="social-icons">
+            <a href="https://www.instagram.com/la_mesola_gin/" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.facebook.com/la_mesola_gin" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://www.tiktok.com/@la_mesola" target="_blank" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+            <a href="https://www.pinterest.it/la_mesola" target="_blank" aria-label="Pinterest"><i class="fa-brands fa-pinterest"></i></a>
+            <a href="https://www.youtube.com/@la_mesola" target="_blank" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        </div>
     </div>
-
-    <a href="https://forms.gle/UPLGDQ5JU766MUcn9" class="button" target="_blank" rel="noopener">Contattaci</a>
-    <a href="https://lamesola.it" class="button" target="_blank" rel="noopener">Visita il nostro sito</a>
 </body>
 
 </html>
