@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop - La Mesola</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        :root{--primary-color:#004d40;--text-color:#333;--card-bg:#ffffff}
+        html,body{margin:0;padding:0;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;background-color:#f7f9f9;color:var(--text-color)}
+        header{background-color:#fff;padding:10px 25px;box-shadow:0 2px 4px rgba(0,0,0,.05);display:flex;justify-content:space-between;align-items:center}
+        header .logo a{font-weight:700;color:var(--primary-color);text-decoration:none;font-size:1.5rem}
+        #hero-section{height:50vh;background-size:cover;background-position:center;position:relative;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;text-shadow:2px 2px 4px rgba(0,0,0,.7)}
+        #hero-section::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background-color:rgba(0,0,0,.5);z-index:1}
+        .hero-content{position:relative;z-index:2;padding:20px}
+        .page-container{max-width:1200px;margin:0 auto;padding:25px}
+        #product-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:30px}
+        .product-card{background-color:var(--card-bg);border-radius:12px;overflow:hidden;transition:transform .3s,box-shadow .3s;display:flex;flex-direction:column;box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1)}
+        .product-card:hover{transform:translateY(-8px) scale(1.02);box-shadow:0 20px 25px -5px rgba(0,0,0,0.1)}
+        .product-card img{width:100%;height:auto;aspect-ratio:2/3;object-fit:cover;display:block;background-color:#f0f0f0}
+        .card-content{padding:20px;flex-grow:1;display:flex;flex-direction:column;justify-content:space-between}
+        .product-title{font-size:1.2rem;margin:0 0 10px;color:var(--primary-color)}
+        .card-info{font-size:.9rem;color:#666;margin-bottom:15px;border-left:3px solid #eee;padding-left:10px}
+        .price-container{font-size:1.2rem;font-weight:700;margin-top:10px}
+        footer{text-align:center;padding:40px 20px;background-color:var(--card-bg);margin-top:40px}
+        .loading, .error{text-align:center;padding:50px;font-size:1.2rem;color:#666}.error{color:#d32f2f}
+    </style>
+</head>
+<body>
+    <header>
+      <div class="logo"><a href="index.html">La Mesola</a></div>
+    </header>
+    <div id="hero-section"><div class="hero-content"><h1>Il Nostro Shop</h1><p>Scopri i sapori unici del Delta del Po.</p></div></div>
+    <main class="page-container" id="main-container">
+        <div id="product-grid" class="loading"><p>Caricamento prodotti...</p></div>
+    </main>
+    <footer><p>© 2025 La Mesola</p></footer>
+    
+    <script>
+      const SCRIPT_URL = 'URL_DELLA_TUA_API_DA_APPS_SCRIPT'; // <-- INCOLLA QUI L'URL
+      const driveImageUrl = "https://lh3.googleusercontent.com/d/";
+
+      document.addEventListener("DOMContentLoaded", async () => {
+        const grid = document.getElementById("product-grid");
+        try {
+          const response = await fetch(SCRIPT_URL);
+          if (!response.ok) throw new Error(`Errore di rete: ${response.statusText}`);
+          const data = await response.json();
+          if (data.error) throw new Error(data.error);
+          
+          if (data.siteInfo && data.siteInfo.heroImageId) {
+            document.getElementById("hero-section").style.backgroundImage = `url('${driveImageUrl}${data.siteInfo.heroImageId}')`;
+          }
+
+          if (!data.products || data.products.length === 0) {
+            grid.innerHTML = `<div class="error">Nessun prodotto trovato.</div>`;
+            return;
+          }
+
+          grid.innerHTML = '';
+          data.products.forEach(p => {
+              const imgUrl = p.thumbnailId ? `${driveImageUrl}${p.thumbnailId}` : `https://via.placeholder.com/290x435?text=N/A`;
+              const priceHtml = p.discountedPrice ? `<s>${p.price}</s> <span style="color:#d32f2f;">${p.discountedPrice}</span>` : (p.price || "N.D.");
+              const card = document.createElement('div');
+              card.className = 'product-card';
+              card.innerHTML = `
+                <img src="${imgUrl}" alt="${p.name}">
+                <div class="card-content">
+                    <div>
+                        <h2 class="product-title">${p.name}</h2>
+                        <div class="card-info">
+                            <span>${p.cl} L</span> | <span>${p.sentore}</span><br>
+                            <small><strong>Botaniche:</strong> ${p.botaniche}</small>
+                        </div>
+                    </div>
+                    <div class="price-container">${priceHtml}</div>
+                </div>`;
+              grid.appendChild(card);
+          });
+        } catch (e) {
+          grid.innerHTML = `<div class="error"><h1>ERRORE</h1><p>${e.message}</p></div>`;
+        }
+      });
+    </script>
+</body>
+</html>
