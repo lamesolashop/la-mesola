@@ -42,7 +42,7 @@
 </div>
     
     <script>
-      const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycby5yjPmLu6Mdg0Fo3i490XKYXt7g1ie3l8SKRkVb_2BGXfiV1pteH0y8xVoHAF_GsW0/exec';
+      const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbx48aMe6_0oM7aKE054vlRADYWrkSX2FZ6QFGiV7CcDk1dBp-g9TiRfTJNYlClc_LQn/exec';
       const driveImageUrl = "https://lh3.googleusercontent.com/d/";
       let allProducts = [], currentProduct = null, cart = [];
       let appliedCoupon = null;
@@ -80,43 +80,32 @@
 async function handleCheckout() {
     if(cart.length === 0) { alert("Il carrello è vuoto!"); return; }
     const btn = document.getElementById('checkout-button');
-    btn.disabled = true; btn.textContent = 'Procedo...';
+    btn.disabled = true;
+    btn.textContent = 'Procedo...';
     
-    // CORREZIONE: Includiamo 'action' e 'payload' nel corpo della richiesta
     const dataToSend = {
-        action: 'createCheckout',
-        payload: {
-            cart: cart,
-            coupon: appliedCoupon ? appliedCoupon.code : null
-        }
+        cart: cart,
+        coupon: appliedCoupon ? appliedCoupon.code : null
     };
 
-    try {
-        const response = await fetch(SCRIPT_URL, {
-            method: 'POST',
-            body: JSON.stringify(dataToSend), // Ora l'oggetto ha la struttura corretta
-            headers: { 'Content-Type': 'text/plain;charset=utf-8' },
-        });
-        
-        if (!response.ok) {
-            // Se la risposta non è OK, prova a leggere il testo per un errore più chiaro
-            const errorText = await response.text();
-            throw new Error(`Errore di rete dal server: ${response.statusText} - ${errorText}`);
-        }
-
-        const res = await response.json();
-        if (res.error) throw new Error(res.error);
-        
-        if (res.url) { 
-            localStorage.removeItem('laMesolaShopCart'); 
-            window.location.href = res.url; 
-        } else { 
-            throw new Error("URL di checkout non ricevuto."); 
-        }
-    } catch(err) {
-        alert('Errore: ' + err.message);
-        btn.disabled = false; btn.textContent = 'Procedi al Checkout';
-    }
+    // Usiamo google.script.run - il metodo più stabile
+    google.script.run
+        .withSuccessHandler(res => {
+            if (res.error) {
+                alert(`Errore: ${res.error}`);
+                btn.disabled = false;
+                btn.textContent = 'Procedi al Checkout';
+            } else if (res.url) {
+                localStorage.removeItem('laMesolaShopCart');
+                window.location.href = res.url;
+            }
+        })
+        .withFailureHandler(err => {
+            alert('Errore: ' + err.message);
+            btn.disabled = false;
+            btn.textContent = 'Procedi al Checkout';
+        })
+        .createCheckoutSession(dataToSend);
 }
     </script>
 </body>
