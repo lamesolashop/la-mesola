@@ -2,163 +2,137 @@
 <html lang="it">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>La Mesola - Gin artigianale Delta del Po</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>La Mesola - Gin artigianale Delta del Po</title>
 
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
-    integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer"
-  />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500&family=Saira:wght@800&display=swap"
-    rel="stylesheet"
-  />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500&family=Saira:wght@800&display=swap"
+        rel="stylesheet"
+    />
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: 'Poppins', sans-serif;
-    }
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: "Poppins", sans-serif;
+        }
 
-    body {
-      height: 100vh;
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      background: url('https://raw.githubusercontent.com/lamesolashop/la-mesola/main/castello.jpg') no-repeat center center fixed;
-      background-size: cover;
-    }
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: url("https://makexp.it//xstore_temp/p,it,2025,00,comune_di_mesola,x,9574,giovanni_crivellari.jpg")
+                no-repeat center center fixed;
+            background-size: cover;
+        }
 
-    h2 {
-      font-family: 'Saira', sans-serif;
-      font-weight: 600;
-      text-transform: uppercase;
-      color: white;
-      text-shadow: 0 0 1px transparent, 0 1px 2px rgb(0 0 0 / 50%);
-      font-size: 3em;
-      text-align: center;
-      margin-bottom: 15px;
-    }
+        section {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 30px 25px;
+            border-radius: 15px;
+            max-width: 600px;
+            width: 90%;
+            text-align: center;
+            color: white;
+        }
 
-    section {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      flex-direction: column;
-      background: rgba(0, 0, 0, 0.5);
-      margin: 20px;
-      padding: 30px 20px;
-      border-radius: 15px;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
-    }
+        h2 {
+            font-family: "Saira", sans-serif;
+            font-weight: 600;
+            font-size: 3em;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+        }
 
-    section img {
-      width: 180px;
-      aspect-ratio: 2 / 1;
-      border-radius: 50% / 35%;
-      box-shadow: 0 0 15px 3px lightblue;
-      margin-bottom: 20px;
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-    }
+        img.logo {
+            width: 160px;
+            height: 160px;
+            object-fit: cover;
+            border-radius: 50%;
+            box-shadow: 0 0 10px 3px lightblue;
+            margin: 0 auto 30px auto;
+            display: block;
+        }
 
-    p {
-      color: white;
-      font-size: 1.2em;
-      margin-bottom: 25px;
-    }
+        p.description {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+            text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+        }
 
-    .buttons a {
-      display: flex;
-      width: 100%;
-      max-width: 300px;
-      margin: 8px auto;
-      align-items: center;
-      justify-content: center;
-      border: 1.5px solid white;
-      padding: 12px;
-      color: white;
-      text-decoration: none;
-      gap: 15px;
-      border-radius: 6px;
-      transition-duration: 200ms;
-      background: transparent;
-      font-weight: 600;
-      font-size: 1.1em;
-    }
+        .buttons a {
+            display: block;
+            max-width: 280px;
+            margin: 10px auto;
+            padding: 12px 20px;
+            border: 1.5px solid white;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1.1em;
+            transition: background-color 0.3s, color 0.3s;
+        }
 
-    .buttons a:hover {
-      background: white;
-      color: #0f172a;
-    }
+        .buttons a:hover {
+            background-color: white;
+            color: #0f172a;
+        }
 
-    .buttons a i {
-      font-size: 1.5em;
-    }
+        footer {
+            text-align: center;
+            padding: 12px 10px;
+            color: white;
+            font-size: 0.9em;
+            margin-top: 20px;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+        }
 
-    footer {
-      text-align: center;
-      color: white;
-      padding: 12px 10px;
-      font-size: 0.9em;
-    }
+        footer a {
+            border: 1.5px solid white;
+            border-radius: 6px;
+            padding: 8px 15px;
+            color: white;
+            text-decoration: none;
+            transition: background-color 0.3s, color 0.3s;
+        }
 
-    footer a {
-      display: inline-flex;
-      width: auto;
-      border-radius: 6px;
-      padding: 8px 16px;
-      border: 1.5px solid white;
-      color: white;
-      text-decoration: none;
-    }
-
-    footer a:hover {
-      background: white;
-      color: #0f172a;
-    }
-  </style>
+        footer a:hover {
+            background-color: white;
+            color: #0f172a;
+        }
+    </style>
 </head>
 
 <body>
-  <section>
-    <h2>LA MESOLA</h2>
-    <img src="https://raw.githubusercontent.com/lamesolashop/la-mesola/main/logo.png" alt="Logo La Mesola" />
-    <p>Gin artigianale del Delta del Po, radicchio e laguna mescolati con passione</p>
+    <section>
+        <h2>LA MESOLA</h2>
+        <img
+            class="logo"
+            src="https://ideogram.ai/g/Uue79gvGT_S7QqAG3K9VTQ/2"
+            alt="Logo La Mesola"
+        />
+        <p class="description">
+            Gin artigianale del Delta del Po, radicchio e laguna mescolati con passione
+        </p>
 
-    <div class="buttons">
-      <a href="https://www.instagram.com/la_mesola/" target="_blank" rel="noopener">
-        <i class="fa-brands fa-instagram"></i> Instagram
-      </a>
-      <a href="https://www.facebook.com/LaMesola" target="_blank" rel="noopener">
-        <i class="fa-brands fa-facebook"></i> Facebook
-      </a>
-      <a href="https://forms.gle/UPLGDQ5JU766MUcn9" target="_blank" rel="noopener">
-        <i class="fa-solid fa-envelope"></i> Contattaci
-      </a>
-      <a href="https://lamesola.it" target="_blank" rel="noopener">
-        <i class="fa-solid fa-globe"></i> Visita il nostro sito
-      </a>
-    </div>
-  </section>
+        <div class="buttons">
+            <a href="INSERISCI_QUI_LINK_CONTATTACI" target="_blank" rel="noopener">Contattaci</a>
+            <a href="INSERISCI_QUI_LINK_SITO" target="_blank" rel="noopener">Visita il nostro sito</a>
+            <a href="INSERISCI_QUI_LINK_STORIA" target="_blank" rel="noopener">La nostra storia</a>
+        </div>
+    </section>
 
-  <footer>
-    <a href="#">Powered by Riccardo Modena</a>
-  </footer>
+    <footer>
+        <a href="#">Powered by Riccardo Modena</a>
+    </footer>
 </body>
 
 </html>
