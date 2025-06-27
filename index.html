@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-    <base target="_top">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop - La Mesola</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <style>
         :root{--primary-color:#004d40;--text-color:#333;--card-bg:#ffffff}html,body{margin:0;padding:0;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;background-color:#f7f9f9;color:var(--text-color)}.site-wrapper{display:flex;position:relative;overflow-x:hidden}.content-wrapper{flex-grow:1;transition:margin-right .3s ease}.cart-sidebar{width:350px;position:fixed;top:0;right:-370px;height:100%;background-color:#fff;box-shadow:-4px 0 15px rgba(0,0,0,.1);z-index:1001;transition:right .3s ease;display:flex;flex-direction:column}.cart-sidebar.open{right:0}@media(min-width:901px){.content-wrapper.cart-open{margin-right:350px}}header{background-color:#fff;padding:10px 25px;box-shadow:0 2px 4px rgba(0,0,0,.05);display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:999}header .logo a{font-weight:700;color:var(--primary-color);text-decoration:none;font-size:1.5rem}.header-actions{display:flex;align-items:center;gap:25px}.header-cart-icon{font-size:1.5rem;cursor:pointer;color:#555;position:relative}.cart-badge{position:absolute;top:-5px;right:-10px;background:#d32f2f;color:#fff;border-radius:50%;width:20px;height:20px;font-size:.8rem;display:flex;align-items:center;justify-content:center;font-weight:700}#hero-section{height:50vh;background-size:cover;background-position:center;position:relative;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;text-shadow:2px 2px 4px rgba(0,0,0,.7)}#hero-section::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background-color:rgba(0,0,0,.5);z-index:1}.hero-content{position:relative;z-index:2;padding:20px}.page-container{max-width:1200px;margin:0 auto;padding:25px}#product-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:30px}.product-card{background-color:var(--card-bg);border-radius:12px;overflow:hidden;cursor:pointer;transition:transform .3s,box-shadow .3s;display:flex;flex-direction:column;box-shadow:0 4px 6px -1px rgba(0,0,0,.1)}.product-card:hover{transform:translateY(-8px) scale(1.02);box-shadow:0 20px 25px -5px rgba(0,0,0,.1)}.product-card img{width:100%;height:auto;aspect-ratio:2/3;object-fit:cover;display:block;background-color:#f0f0f0}.card-content{padding:20px;flex-grow:1;display:flex;flex-direction:column;justify-content:space-between}.product-title{font-size:1.2rem;margin:0 0 10px;color:var(--primary-color)}.card-info{font-size:.9rem;color:#666;margin-bottom:15px;border-left:3px solid #eee;padding-left:10px}.price-container{font-size:1.2rem;font-weight:700;margin-top:10px}footer{text-align:center;padding:40px 20px;background-color:var(--card-bg);margin-top:40px}.loading,.error{text-align:center;padding:50px;font-size:1.2rem;color:#666}.error{color:#d32f2f}.modal-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.7);display:none;align-items:center;justify-content:center;z-index:1000}.modal-content{background:#fff;padding:30px;border-radius:10px;width:90%;max-width:900px;max-height:90vh;overflow-y:auto;position:relative}.modal-close{position:absolute;top:10px;right:20px;font-size:2.5rem;color:#aaa;cursor:pointer;line-height:1}.modal-body{display:grid;grid-template-columns:1fr 1fr;gap:30px}@media (max-width:768px){.modal-body{grid-template-columns:1fr}}.modal-gallery #modal-main-image{width:100%;height:auto;max-height:450px;object-fit:contain;border-radius:8px;border:1px solid #eee;margin-bottom:15px}.thumbnail-strip{display:flex;gap:10px;justify-content:center}.thumbnail-strip .thumbnail{width:70px;height:70px;object-fit:cover;border-radius:8px;cursor:pointer;border:2px solid #ddd;opacity:.7;transition:opacity .2s,border-color .2s}.thumbnail-strip .thumbnail:hover,.thumbnail-strip .thumbnail.active{opacity:1;border-color:var(--primary-color)}.action-button{display:flex;align-items:center;justify-content:center;width:100%;box-sizing:border-box;padding:12px;border-radius:5px;text-decoration:none;font-weight:700;margin-top:15px;cursor:pointer;border:none;font-size:1em;line-height:1.5}.quantity-selector{display:flex;align-items:center;gap:10px;margin-top:20px;margin-bottom:10px}.quantity-selector input{width:50px;text-align:center;font-size:1.1rem;border:1px solid #ccc;border-radius:5px}.cart-header{padding:20px;border-bottom:1px solid #eee;display:flex;justify-content:space-between;align-items:center}.cart-items{flex-grow:1;overflow-y:auto;padding:10px 20px}.cart-item{display:flex;align-items:center;margin-bottom:15px}.cart-item img{width:60px;height:60px;object-fit:cover;border-radius:5px;margin-right:15px}.cart-item-details{flex-grow:1}.cart-item-details h4{margin:0 0 5px;font-size:1rem}.cart-item-details p{margin:0;color:#777}.cart-item-remove{font-size:1.2rem;color:#aaa;cursor:pointer}.cart-footer{padding:20px;border-top:1px solid #eee}.cart-total{display:flex;justify-content:space-between;font-weight:700;font-size:1.2rem;margin-bottom:15px}.coupon-section{display:flex;gap:10px;margin-bottom:15px}.coupon-section input{flex-grow:1;border:1px solid #ccc;padding:8px;border-radius:5px}.coupon-section button{padding:8px 12px;border:none;background:var(--primary-color);color:#fff;border-radius:5px;cursor:pointer}
@@ -21,8 +22,16 @@
         <main class="page-container" id="main-container">
             <div id="product-grid" class="loading"><p>Caricamento...</p></div>
         </main>
-        <div id="product-modal" class="modal-overlay" onclick="closeModal()"><div class="modal-content" onclick="event.stopPropagation()"><span class="modal-close" onclick="closeModal()">×</span><div class="modal-body"><div class="modal-gallery"><img id="modal-main-image" src=""><div id="thumbnail-strip" class="thumbnail-strip"></div></div><div class="modal-details"><h2 id="modal-title"></h2><p id="modal-description"></p><div id="modal-extra-info" class="product-info-grid"></div><div id="modal-price" class="price-container"></div><div class="quantity-selector"><label for="modal-quantity">Quantità:</label><input type="number" id="modal-quantity" value="1" min="1" step="1"></div><button id="modal-add-to-cart-button" class="action-button" style="background-color: var(--primary-color); color: white;" onclick="handleAddToCart()">Aggiungi al Carrello</button></div></div></div></div>
-        <footer><p>© 2025 La Mesola Shop</p></footer>
+        <div id="product-modal" class="modal-overlay" onclick="closeModal()">
+          <div class="modal-content" onclick="event.stopPropagation()">
+            <span class="modal-close" onclick="closeModal()">×</span>
+            <div class="modal-body">
+                <div class="modal-gallery"><img id="modal-main-image" src=""><div id="thumbnail-strip" class="thumbnail-strip"></div></div>
+                <div class="modal-details"><h2 id="modal-title"></h2><p id="modal-description"></p><div id="modal-extra-info" class="product-info-grid"></div><div id="modal-price" class="price-container"></div><div class="quantity-selector"><label for="modal-quantity">Quantità:</label><input type="number" id="modal-quantity" value="1" min="1" step="1"></div><button id="modal-add-to-cart-button" class="action-button" style="background-color: var(--primary-color); color: white;" onclick="handleAddToCart()">Aggiungi al Carrello</button></div>
+            </div>
+          </div>
+        </div>
+        <footer><p>© 2025 La Mesola</p></footer>
     </div>
     <div class="cart-sidebar" id="cart-sidebar">
         <div class="cart-header"><h2>Il Tuo Carrello</h2><span class="modal-close" onclick="toggleCart()">×</span></div>
@@ -37,83 +46,109 @@
         </div>
     </div>
 </div>
+    
     <script>
-      const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwjErO-prrWFxa3jAeN9FjC4Aitj6_L82GTVuo_dIsSS4F4-kxHljLyGitn-oQOineI/exec';
-      const driveImageUrl = "https://lh3.googleusercontent.com/d/";
-      let allProducts = [], currentProduct = null, cart = [];
-      let appliedCoupon = null;
+        const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwjErO-prrWFxa3jAeN9FjC4Aitj6_L82GTVuo_dIsSS4F4-kxHljLyGitn-oQOineI/exec';
+        const driveImageUrl = "https://lh3.googleusercontent.com/d/";
+        let allProducts = [], currentProduct = null, cart = [];
+        let appliedCoupon = null;
 
-      document.addEventListener("DOMContentLoaded", async () => {
-        const grid = document.getElementById("product-grid");
-        try {
-            const response = await fetch(SCRIPT_URL);
-            if (!response.ok) throw new Error(`Errore di rete: ${response.statusText}`);
-            const data = await response.json();
-            if (data.error) throw new Error(data.error);
-            
-            if (data.siteInfo && data.siteInfo.heroImageId) {
-                document.getElementById("hero-section").style.backgroundImage = `url('${driveImageUrl}${data.siteInfo.heroImageId}')`;
+        document.addEventListener("DOMContentLoaded", async () => {
+            const grid = document.getElementById("product-grid");
+            try {
+                const response = await fetch(SCRIPT_URL);
+                if (!response.ok) throw new Error(`Errore di rete: ${response.statusText}`);
+                const data = await response.json();
+                if (data.error) throw new Error(data.error);
+                
+                if (data.siteInfo && data.siteInfo.heroImageId) {
+                    document.getElementById("hero-section").style.backgroundImage = `url('${driveImageUrl}${data.siteInfo.heroImageId}')`;
+                }
+                allProducts = data.products || [];
+                renderProducts(allProducts);
+                loadCart();
+            } catch (e) {
+                grid.innerHTML = `<div class="error"><h1>ERRORE</h1><p>${e.message}</p></div>`;
             }
-            allProducts = data.products || [];
-            renderProducts(allProducts);
-            loadCart();
+        });
 
-            if (new URLSearchParams(window.location.search).get('payment') === 'success') {
-                alert('Grazie! Il tuo acquisto è andato a buon fine.');
-                localStorage.removeItem('laMesolaShopCart');
-                cart = [];
-                updateCartUI();
-                window.history.replaceState({}, '', window.location.pathname);
+        function renderProducts(products) { const grid = document.getElementById("product-grid"); grid.innerHTML = ''; if (!products.length) { grid.innerHTML = `<div class="error">Nessun prodotto trovato.</div>`; return; } products.forEach((p, i) => { const imgUrl = p.thumbnailId ? `${driveImageUrl}${p.thumbnailId}` : `https://via.placeholder.com/290x435?text=N/A`; const priceHtml = p.discountedPrice ? `<s>${p.price}</s> <span style="color:#d32f2f;">${p.discountedPrice}</span>` : (p.price || "N.D."); const card = document.createElement('div'); card.className = 'product-card'; card.onclick = () => openProductModal(i); card.innerHTML = `<img src="${imgUrl}" alt="${p.name}"><div class="card-content"><div><h2 class="product-title">${p.name}</h2><div class="card-info"><span>${p.cl} L</span> | <span>${p.sentore}</span><br><small><strong>Botaniche:</strong> ${p.botaniche}</small></div></div><div class="price-container">${priceHtml}</div></div>`; grid.appendChild(card); }); }
+        function openModal(id) { document.getElementById(id).style.display = 'flex'; }
+        function closeModal() { document.getElementById('product-modal').style.display = 'none'; }
+        function openProductModal(index) { currentProduct = allProducts[index]; document.getElementById("modal-title").textContent = currentProduct.name; document.getElementById("modal-description").textContent = currentProduct.description; document.getElementById("modal-price").innerHTML = currentProduct.discountedPrice ? `<s>${currentProduct.price}</s> <span style="color:#d32f2f;">${currentProduct.discountedPrice}</span>` : (currentProduct.price || ''); document.getElementById("modal-quantity").value = 1; const extraInfoContainer = document.getElementById("modal-extra-info"); extraInfoContainer.innerHTML = ''; if (currentProduct.cl) extraInfoContainer.innerHTML += `<div class="info-item"><span class="info-item-label">FORMATO</span><span class="info-item-value">${currentProduct.cl} L</span></div>`; if (currentProduct.sentore) extraInfoContainer.innerHTML += `<div class="info-item"><span class="info-item-label">SENTORE</span><span class="info-item-value">${currentProduct.sentore}</span></div>`; if (currentProduct.botaniche) extraInfoContainer.innerHTML += `<div class="info-item" style="grid-column: 1 / -1;"><span class="info-item-label">BOTANICHE</span><span class="info-item-value">${currentProduct.botaniche}</span></div>`; const mainImage = document.getElementById("modal-main-image"); const thumbStrip = document.getElementById("thumbnail-strip"); thumbStrip.innerHTML = ''; const imageUrls = [currentProduct.thumbnailId, currentProduct.image1Id, currentProduct.image2Id].filter(Boolean); if (imageUrls.length > 0) { mainImage.src = driveImageUrl + imageUrls[0]; imageUrls.forEach(id => { const thumb = document.createElement('img'); thumb.src = driveImageUrl + id; thumb.className = 'thumbnail'; thumb.onclick = e => { e.stopPropagation(); mainImage.src = driveImageUrl + id; }; thumbStrip.appendChild(thumb); }); } else { mainImage.src = 'https://via.placeholder.com/400x600?text=N/A'; } openModal('product-modal'); }
+        function toggleCart() { document.getElementById('cart-sidebar').classList.toggle('open'); document.getElementById('content-wrapper').classList.toggle('cart-open'); }
+        function handleAddToCart() { if (!currentProduct) return; const quantity = parseInt(document.getElementById('modal-quantity').value, 10); if (isNaN(quantity) || quantity < 1) return; const existingItem = cart.find(item => item.name === currentProduct.name); if (existingItem) { existingItem.quantity += quantity; } else { cart.push({ ...currentProduct, quantity: quantity }); } saveCart(); updateCartUI(); closeModal(); if(!document.getElementById('cart-sidebar').classList.contains('open')) toggleCart(); }
+        function removeFromCart(productName) { cart = cart.filter(item => item.name !== productName); appliedCoupon = null; saveCart(); updateCartUI(); }
+        function updateCartUI() {
+            const container = document.getElementById('cart-items');
+            const subtotalEl = document.getElementById('cart-subtotal');
+            const totalEl = document.getElementById('cart-total');
+            const badge = document.getElementById('cart-badge');
+            const shippingEl = document.getElementById('shipping-cost-text');
+            container.innerHTML = ''; let subtotal = 0; let totalItems = 0; let highestShipping = 0;
+            if (cart.length === 0) {
+                container.innerHTML = '<p style="text-align:center;color:#999;margin-top:50px;">Il carrello è vuoto</p>';
+            } else {
+                cart.forEach(item => {
+                    const price = parseFloat((item.discountedPrice || item.price || '0').replace('€', '').replace(',', '.'));
+                    subtotal += price * item.quantity;
+                    totalItems += item.quantity;
+                    if (item.shippingCost > highestShipping) highestShipping = item.shippingCost;
+                    const imgUrl = item.thumbnailId ? `${driveImageUrl}${item.thumbnailId}` : 'https://via.placeholder.com/60x60?text=N/A';
+                    container.innerHTML += `<div class="cart-item"><img src="${imgUrl}" alt="${item.name}"><div class="cart-item-details"><h4>${item.name}</h4><p>${item.quantity} x ${item.discountedPrice || item.price}</p></div><span class="cart-item-remove" onclick="removeFromCart('${item.name}')">×</span></div>`;
+                });
             }
-        } catch (e) {
-            grid.innerHTML = `<div class="error"><h1>ERRORE</h1><p>${e.message}</p></div>`;
+            shippingEl.textContent = cart.length > 0 ? `Spedizione: € ${highestShipping.toFixed(2)}` : 'Spedizione: non calcolata';
+            subtotalEl.textContent = `€ ${subtotal.toFixed(2)}`;
+            let total = subtotal + (cart.length > 0 ? highestShipping : 0);
+            if (appliedCoupon) {
+                const productWithCoupon = allProducts.find(p => p.couponCode && p.couponCode.trim().toLowerCase() === appliedCoupon.code);
+                const itemInCart = cart.find(item => item.name === productWithCoupon.name);
+                if (productWithCoupon && itemInCart) {
+                    const couponDiscount = productWithCoupon.couponValue;
+                    total -= couponDiscount;
+                    document.getElementById('coupon-result').textContent = `Sconto "${appliedCoupon.code.toUpperCase()}" applicato: -€ ${couponDiscount.toFixed(2)}`;
+                } else { appliedCoupon = null; document.getElementById('coupon-result').textContent = 'Coupon non più valido per questo carrello.'; }
+            } else { document.getElementById('coupon-result').textContent = ''; }
+            totalEl.textContent = `€ ${total.toFixed(2)}`;
+            badge.textContent = totalItems;
+            badge.style.display = totalItems > 0 ? 'flex' : 'none';
+            document.getElementById('checkout-button').style.display = cart.length > 0 ? 'flex' : 'none';
         }
-      });
-      
-      function renderProducts(products) { const grid = document.getElementById("product-grid"); grid.innerHTML = ''; if (!products.length) { grid.innerHTML = `<div class="error">Nessun prodotto trovato.</div>`; return; } products.forEach((p, i) => { const imgUrl = p.thumbnailId ? `${driveImageUrl}${p.thumbnailId}` : `https://via.placeholder.com/290x435?text=N/A`; const priceHtml = p.discountedPrice ? `<s>${p.price}</s> <span style="color:#d32f2f;">${p.discountedPrice}</span>` : (p.price || "N.D."); const card = document.createElement('div'); card.className = 'product-card'; card.onclick = () => openProductModal(i); card.innerHTML = `<img src="${imgUrl}" alt="${p.name}"><div class="card-content"><div><h2 class="product-title">${p.name}</h2><div class="card-info"><span>${p.cl} L</span> | <span>${p.sentore}</span><br><small><strong>Botaniche:</strong> ${p.botaniche}</small></div></div><div class="price-container">${priceHtml}</div></div>`; grid.appendChild(card); }); }
-      function openModal(id) { document.getElementById(id).style.display = 'flex'; }
-      function closeModal() { document.getElementById('product-modal').style.display = 'none'; }
-      function openProductModal(index) { currentProduct = allProducts[index]; document.getElementById("modal-title").textContent = currentProduct.name; document.getElementById("modal-description").textContent = currentProduct.description; document.getElementById("modal-price").innerHTML = currentProduct.discountedPrice ? `<s>${currentProduct.price}</s> <span style="color:#d32f2f;">${currentProduct.discountedPrice}</span>` : (currentProduct.price || ''); document.getElementById("modal-quantity").value = 1; const extraInfoContainer = document.getElementById("modal-extra-info"); extraInfoContainer.innerHTML = ''; if (currentProduct.cl) extraInfoContainer.innerHTML += `<div class="info-item"><span class="info-item-label">FORMATO</span><span class="info-item-value">${currentProduct.cl} L</span></div>`; if (currentProduct.sentore) extraInfoContainer.innerHTML += `<div class="info-item"><span class="info-item-label">SENTORE</span><span class="info-item-value">${currentProduct.sentore}</span></div>`; if (currentProduct.botaniche) extraInfoContainer.innerHTML += `<div class="info-item" style="grid-column: 1 / -1;"><span class="info-item-label">BOTANICHE</span><span class="info-item-value">${currentProduct.botaniche}</span></div>`; const mainImage = document.getElementById("modal-main-image"); const thumbStrip = document.getElementById("thumbnail-strip"); thumbStrip.innerHTML = ''; const imageUrls = [currentProduct.thumbnailId, currentProduct.image1Id, currentProduct.image2Id].filter(Boolean); if (imageUrls.length > 0) { mainImage.src = driveImageUrl + imageUrls[0]; imageUrls.forEach(id => { const thumb = document.createElement('img'); thumb.src = driveImageUrl + id; thumb.className = 'thumbnail'; thumb.onclick = e => { e.stopPropagation(); mainImage.src = driveImageUrl + id; }; thumbStrip.appendChild(thumb); }); } else { mainImage.src = 'https://via.placeholder.com/400x600?text=N/A'; } openModal('product-modal'); }
-      function toggleCart() { document.getElementById('cart-sidebar').classList.toggle('open'); document.getElementById('content-wrapper').classList.toggle('cart-open'); }
-      function handleAddToCart() { if (!currentProduct) return; const quantity = parseInt(document.getElementById('modal-quantity').value, 10); if (isNaN(quantity) || quantity < 1) return; const existingItem = cart.find(item => item.name === currentProduct.name); if (existingItem) { existingItem.quantity += quantity; } else { cart.push({ ...currentProduct, quantity: quantity }); } saveCart(); updateCartUI(); closeModal(); if(!document.getElementById('cart-sidebar').classList.contains('open')) toggleCart(); }
-      function removeFromCart(productName) { cart = cart.filter(item => item.name !== productName); appliedCoupon = null; saveCart(); updateCartUI(); }
-      function updateCartUI() { const container = document.getElementById('cart-items'); const subtotalEl = document.getElementById('cart-subtotal'); const totalEl = document.getElementById('cart-total'); const badge = document.getElementById('cart-badge'); const shippingEl = document.getElementById('shipping-cost-text'); container.innerHTML = ''; let subtotal = 0; let totalItems = 0; let highestShipping = 0; if (cart.length === 0) { container.innerHTML = '<p style="text-align:center;color:#999;margin-top:50px;">Il carrello è vuoto</p>'; } else { cart.forEach(item => { const price = parseFloat((item.discountedPrice || item.price || '0').replace('€', '').replace(',', '.')); subtotal += price * item.quantity; totalItems += item.quantity; if (item.shippingCost > highestShipping) highestShipping = item.shippingCost; const imgUrl = item.thumbnailId ? `${driveImageUrl}${item.thumbnailId}` : 'https://via.placeholder.com/60x60?text=N/A'; container.innerHTML += `<div class="cart-item"><img src="${imgUrl}" alt="${item.name}"><div class="cart-item-details"><h4>${item.name}</h4><p>${item.quantity} x ${item.discountedPrice || item.price}</p></div><span class="cart-item-remove" onclick="removeFromCart('${item.name}')">×</span></div>`; }); } shippingEl.textContent = cart.length > 0 ? `Spedizione: € ${highestShipping.toFixed(2)}` : 'Spedizione: non calcolata'; subtotalEl.textContent = `€ ${subtotal.toFixed(2)}`; let total = subtotal + (cart.length > 0 ? highestShipping : 0); let couponDiscount = 0; if (appliedCoupon) { const productWithCoupon = allProducts.find(p => p.couponCode && p.couponCode.trim().toLowerCase() === appliedCoupon.code); const itemInCart = cart.find(item => item.name === productWithCoupon.name); if (productWithCoupon && itemInCart) { couponDiscount = productWithCoupon.couponValue; total -= couponDiscount; document.getElementById('coupon-result').textContent = `Sconto "${appliedCoupon.code.toUpperCase()}" applicato: -€ ${couponDiscount.toFixed(2)}`; } else { appliedCoupon = null; document.getElementById('coupon-result').textContent = 'Coupon non più valido per questo carrello.'; }} else { document.getElementById('coupon-result').textContent = ''; } totalEl.textContent = `€ ${total.toFixed(2)}`; badge.textContent = totalItems; badge.style.display = totalItems > 0 ? 'flex' : 'none'; document.getElementById('checkout-button').style.display = cart.length > 0 ? 'flex' : 'none'; }
-      function applyCoupon() { const code = document.getElementById('coupon-input').value.trim().toLowerCase(); if (!code) return; const productWithCoupon = allProducts.find(p => p.couponCode && p.couponCode.trim().toLowerCase() === code); if (productWithCoupon && cart.find(item => item.name === productWithCoupon.name)) { appliedCoupon = { code: code }; alert('Coupon applicato!'); } else { appliedCoupon = null; alert('Coupon non valido o prodotto non nel carrello.'); } updateCartUI(); }
-      function saveCart() { try { localStorage.setItem('laMesolaShopCart', JSON.stringify({cart, coupon: appliedCoupon})); } catch(e) {} }
-      function loadCart() { const saved = localStorage.getItem('laMesolaShopCart'); if (saved) { try { const data = JSON.parse(saved); cart = data.cart || []; appliedCoupon = data.coupon || null; } catch (e) { cart = []; appliedCoupon = null; } } updateCartUI(); }
-      async function handleCheckout() {
-        if(cart.length === 0) { alert("Il carrello è vuoto!"); return; }
-        const btn = document.getElementById('checkout-button'); btn.disabled = true; btn.textContent = 'Procedo...';
-        try {
+        function applyCoupon() { const code = document.getElementById('coupon-input').value.trim().toLowerCase(); if (!code) return; const productWithCoupon = allProducts.find(p => p.couponCode && p.couponCode.trim().toLowerCase() === code); if (productWithCoupon && cart.find(item => item.name === productWithCoupon.name)) { appliedCoupon = { code: code }; alert('Coupon applicato!'); } else { appliedCoupon = null; alert('Coupon non valido o prodotto non nel carrello.'); } updateCartUI(); }
+        function saveCart() { try { localStorage.setItem('laMesolaShopCart', JSON.stringify({cart, coupon: appliedCoupon})); } catch(e) {} }
+        function loadCart() { const saved = localStorage.getItem('laMesolaShopCart'); if (saved) { try { const data = JSON.parse(saved); cart = data.cart || []; appliedCoupon = data.coupon || null; } catch (e) { cart = []; appliedCoupon = null; } } updateCartUI(); }
+        
+        async function handleCheckout() {
+            if(cart.length === 0) { alert("Il carrello è vuoto!"); return; }
+            const btn = document.getElementById('checkout-button');
+            btn.disabled = true; btn.textContent = 'Procedo...';
             const dataToSend = { cart: cart, coupon: appliedCoupon ? appliedCoupon.code : null };
-            const response = await fetch(SCRIPT_URL + "?action=createCheckout", {
-                method: 'POST',
-                mode: 'no-cors', // Importante per POST semplici
-                headers: { 'Content-Type': 'text/plain' },
-                body: JSON.stringify(dataToSend)
-            });
-            // La risposta con no-cors sarà opaca, quindi non possiamo leggerla.
-            // Ci affidiamo al fatto che Stripe reindirizzerà correttamente.
-            // Per il debug, è meglio usare il metodo con google.script.run se possibile.
-            // Questa è un'alternativa quando google.script.run fallisce.
-            
-            // Per ora, simuliamo il successo per il reindirizzamento
-             const tempStripeUrl = "https://checkout.stripe.com/pay/cs_test_a1...YOUR_SESSION_ID"; // URL di esempio
-             // window.location.href = tempStripeUrl; // Da usare quando avremo un URL reale
-             
-             // Poiché non possiamo leggere l'URL con no-cors, dobbiamo fare una chiamata GET per ottenerlo
-             const checkoutResponse = await fetch(SCRIPT_URL + `?action=createCheckout&payload=${encodeURIComponent(JSON.stringify(dataToSend))}`);
-             const res = await checkoutResponse.json();
-             
-             if (res.error) throw new Error(res.error);
-             if (res.url) { localStorage.removeItem('laMesolaShopCart'); window.location.href = res.url; }
-             else { throw new Error("URL di checkout non ricevuto."); }
 
-        } catch(err) {
-            alert('Errore: ' + err.message);
-            btn.disabled = false; btn.textContent = 'Procedi al Checkout';
+            try {
+                // Usiamo POST per inviare dati complessi
+                const response = await fetch(SCRIPT_URL, {
+                    method: 'POST',
+                    mode: 'cors',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ action: 'createCheckout', payload: dataToSend })
+                });
+
+                if (!response.ok) throw new Error('Errore di rete dal server.');
+                const res = await response.json();
+                
+                if (res.error) throw new Error(res.error);
+                if (res.url) { 
+                    localStorage.removeItem('laMesolaShopCart'); 
+                    window.location.href = res.url; 
+                } else {
+                    throw new Error("URL di checkout non ricevuto.");
+                }
+            } catch(err) {
+                alert('Errore: ' + err.message);
+                btn.disabled = false; btn.textContent = 'Procedi al Checkout';
+            }
         }
-      }
     </script>
 </body>
 </html>
