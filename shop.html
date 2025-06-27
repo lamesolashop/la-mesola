@@ -42,7 +42,7 @@
 </div>
     
     <script>
-      const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxcO3i4ZnEIllKszyZeg9MdrVPktonRbfIJL380GN4mcqX-kjsOcE0s7Q8LFtLkCRiI/exec';
+      const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwhsC01ELBPpG5o5M8HvzomFvERd6b_y2upTfMvj1PMhClzKdJjcYKmLOaN9GW0Cg4M/exec';
       const driveImageUrl = "https://lh3.googleusercontent.com/d/";
       let allProducts = [], currentProduct = null, cart = [];
       let appliedCoupon = null;
@@ -77,30 +77,47 @@
       function applyCoupon() { const code = document.getElementById('coupon-input').value.trim().toLowerCase(); const couponResultEl = document.getElementById('coupon-result'); if (!code) return; const productWithCoupon = allProducts.find(p => p.couponCode && p.couponCode.trim().toLowerCase() === code); if (productWithCoupon && cart.find(item => item.name === productWithCoupon.name)) { appliedCoupon = { code: code }; couponResultEl.textContent = 'Coupon applicato!'; couponResultEl.className = 'coupon-result success'; } else { appliedCoupon = null; couponResultEl.textContent = 'Coupon non valido o prodotto non nel carrello.'; couponResultEl.className = 'coupon-result fail'; } saveCart(); updateCartUI(); }
       function saveCart() { try { localStorage.setItem('laMesolaShopCart', JSON.stringify({cart, coupon: appliedCoupon})); } catch(e) {} }
       function loadCart() { const saved = localStorage.getItem('laMesolaShopCart'); if (saved) { try { const data = JSON.parse(saved); cart = data.cart || []; appliedCoupon = data.coupon || null; } catch (e) { cart = []; appliedCoupon = null; } } updateCartUI(); }
-      async function handleCheckout() {
-        if(cart.length === 0) { alert("Il carrello è vuoto!"); return; }
-        const btn = document.getElementById('checkout-button');
-        btn.disabled = true; btn.textContent = 'Procedo...';
-        const dataToSend = { cart: cart, coupon: appliedCoupon ? appliedCoupon.code : null };
-        try {
-            const response = await fetch(SCRIPT_URL, {
-                method: 'POST',
-                body: JSON.stringify(dataToSend),
-                headers: { 'Content-Type': 'text/plain;charset=utf-8' },
-                redirect: 'follow'
-            });
-            if (!response.ok && response.type !== 'opaque') throw new Error('Errore di rete dal server.');
-            const res = await response.json();
-            if (res.error) throw new Error(res.error);
-            if (res.url) { 
-                localStorage.removeItem('laMesolaShopCart'); 
-                window.location.href = res.url; 
-            } else { throw new Error("URL di checkout non ricevuto."); }
-        } catch(err) {
-            alert('Errore: ' + err.message);
-            btn.disabled = false; btn.textContent = 'Procedi al Checkout';
+async function handleCheckout() {
+    if(cart.length === 0) { alert("Il carrello è vuoto!"); return; }
+    const btn = document.getElementById('checkout-button');
+    btn.disabled = true; btn.textContent = 'Procedo...';
+    
+    // CORREZIONE: Includiamo 'action' e 'payload' nel corpo della richiesta
+    const dataToSend = {
+        action: 'createCheckout',
+        payload: {
+            cart: cart,
+            coupon: appliedCoupon ? appliedCoupon.code : null
         }
-      }
+    };
+
+    try {
+        const response = await fetch(SCRIPT_URL, {
+            method: 'POST',
+            body: JSON.stringify(dataToSend), // Ora l'oggetto ha la struttura corretta
+            headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+        });
+        
+        if (!response.ok) {
+            // Se la risposta non è OK, prova a leggere il testo per un errore più chiaro
+            const errorText = await response.text();
+            throw new Error(`Errore di rete dal server: ${response.statusText} - ${errorText}`);
+        }
+
+        const res = await response.json();
+        if (res.error) throw new Error(res.error);
+        
+        if (res.url) { 
+            localStorage.removeItem('laMesolaShopCart'); 
+            window.location.href = res.url; 
+        } else { 
+            throw new Error("URL di checkout non ricevuto."); 
+        }
+    } catch(err) {
+        alert('Errore: ' + err.message);
+        btn.disabled = false; btn.textContent = 'Procedi al Checkout';
+    }
+}
     </script>
 </body>
 </html>
