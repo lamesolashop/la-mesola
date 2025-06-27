@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>La Mesola - Gin e Amari Artigianali</title>
 
   <!-- Font Merienda -->
@@ -16,24 +16,29 @@
       box-sizing: border-box;
     }
 
-    body, html {
+    html, body {
       height: 100%;
       font-family: 'Merienda', sans-serif;
-      overflow: hidden;
       color: white;
+      overflow: hidden;
     }
 
     body {
       background: url('https://makexp.it//xstore_temp/p,it,2025,00,comune_di_mesola,x,9574,giovanni_crivellari.jpg') no-repeat center center fixed;
       background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .overlay {
       position: relative;
-      background: rgba(0,0,0,0.8);
+      background: rgba(0,0,0,0.85);
       padding: 40px 30px;
-      max-width: 650px;
-      margin: 50px auto;
+      width: 90%;
+      max-width: 700px;
+      height: 90%;
+      overflow-y: auto;
       border-radius: 18px;
       text-align: center;
     }
@@ -53,23 +58,26 @@
     }
 
     p {
-      font-size: 1.5em;
+      font-size: 1.6em;
       margin-bottom: 30px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
     .highlight {
-      font-size: 1.3em;
+      font-size: 1.35em;
     }
 
     .button {
       display: block;
       margin: 20px auto;
-      padding: 16px 35px;
+      padding: 18px 35px;
       border: 2px solid white;
       border-radius: 8px;
       text-decoration: none;
       color: white;
-      font-size: 1.4em;
+      font-size: 1.5em;
       transition: all 0.3s;
     }
 
@@ -81,8 +89,9 @@
     .social-icons {
       display: flex;
       justify-content: center;
+      flex-wrap: wrap;
       gap: 22px;
-      margin: 30px 0 20px;
+      margin: 30px 0 25px;
     }
 
     .social-icons a {
@@ -94,6 +103,33 @@
 
     .social-icons a:hover {
       color: lightblue;
+    }
+
+    @media (max-width: 768px) {
+      .overlay {
+        padding: 30px 20px;
+        height: 95%;
+      }
+
+      h1 {
+        font-size: 2.5em;
+      }
+
+      p {
+        font-size: 1.3em;
+        white-space: normal;
+      }
+
+      .button {
+        padding: 14px 25px;
+        font-size: 1.3em;
+        margin: 16px auto;
+      }
+
+      .social-icons {
+        gap: 18px;
+        margin: 25px 0 20px;
+      }
     }
   </style>
 </head>
