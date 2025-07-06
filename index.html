@@ -5,85 +5,142 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>La Mesola - Gin e Amari Artigianali</title>
 
-  <!-- Font Merienda -->
-  <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" />
+  <!-- Font Merienda e Font Awesome per le icone -->
+  <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@400;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
 
   <style>
+    :root {
+      --primary-color: #E0E0E0; /* Bianco sporco per il testo */
+      --accent-color: #87CEEB; /* Azzurro chiaro per hover e dettagli */
+      --bg-overlay: rgba(15, 23, 42, 0.85); /* Blu scuro quasi nero, più elegante */
+    }
+
     * { margin: 0; padding: 0; box-sizing: border-box; }
+
     body {
-      font-family: 'Merienda', sans-serif;
+      font-family: 'Poppins', sans-serif; /* Usiamo Poppins per i pulsanti, più leggibile */
       background: url('https://makexp.it//xstore_temp/p,it,2025,00,comune_di_mesola,x,9574,giovanni_crivellari.jpg') no-repeat center center fixed;
       background-size: cover;
-      color: white;
-      text-align: center;
+      color: var(--primary-color);
+      display: flex;
+      justify-content: center;
+      align-items: center;
       min-height: 100vh;
+      padding: 20px;
     }
-    .overlay {
-      background: rgba(0,0,0,0.85);
+    .container {
+      background: var(--bg-overlay);
+      backdrop-filter: blur(5px); /* Effetto vetro smerigliato per lo sfondo */
       padding: 40px 30px;
-      max-width: 700px;
-      margin: 50px auto;
-      border-radius: 18px;
+      max-width: 600px;
+      width: 100%;
+      margin: 0 auto;
+      border-radius: 20px;
+      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      text-align: center;
     }
-    .overlay img.logo {
-      width: 150px; height: 150px; object-fit: cover;
+    .logo {
+      width: 120px; height: 120px; object-fit: cover;
       border-radius: 50%;
-      box-shadow: 0 0 12px 3px lightblue;
-      margin-bottom: 25px;
+      border: 3px solid var(--accent-color);
+      margin-bottom: 20px;
+      box-shadow: 0 0 15px rgba(135, 206, 235, 0.5);
     }
-    h1 { font-size: 3.5em; margin-bottom: 15px; }
-    p.sottotitolo { font-size: 1.6em; margin-bottom: 30px; white-space: normal; }
-    .highlight { font-size: 1.35em; }
+    h1 {
+      font-family: 'Merienda', cursive;
+      font-size: 2.8em;
+      margin-bottom: 10px;
+    }
+    .sottotitolo {
+      font-size: 1.2em;
+      margin-bottom: 30px;
+      line-height: 1.5;
+      opacity: 0.9;
+    }
+    .button-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
     .button {
-      display: block; margin: 20px auto; padding: 18px 35px;
-      border: 2px solid white; border-radius: 8px;
-      text-decoration: none; color: white;
-      font-size: 1.5em; transition: all 0.3s;
+      display: block;
+      padding: 16px;
+      border: 2px solid var(--primary-color);
+      border-radius: 50px; /* Pulsanti più arrotondati e moderni */
+      text-decoration: none;
+      color: var(--primary-color);
+      font-size: 1.1em;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
     }
-    .button:hover { background: white; color: #0f172a; }
+    .button:hover {
+      background: var(--accent-color);
+      color: var(--bg-overlay);
+      border-color: var(--accent-color);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(135, 206, 235, 0.3);
+    }
+    .button i {
+      margin-right: 10px;
+    }
     .social-icons {
-      display: flex; justify-content: center; flex-wrap: wrap;
-      gap: 22px; margin: 30px 0 25px; min-height: 2.2em; /* Spazio per evitare salti di layout */
+      display: flex; justify-content: center;
+      gap: 25px; margin-top: 40px;
     }
-    .social-icons a { color: white; font-size: 2em; text-decoration: none; transition: color 0.3s; }
-    .social-icons a:hover { color: lightblue; }
+    .social-icons a {
+      color: var(--primary-color);
+      font-size: 1.8em;
+      transition: all 0.3s ease;
+    }
+    .social-icons a:hover {
+      color: var(--accent-color);
+      transform: scale(1.2);
+    }
     @media (max-width: 768px) {
-      .overlay { padding: 30px 20px; margin: 20px; }
-      h1 { font-size: 2.5em; }
-      p.sottotitolo { font-size: 1.3em; }
-      .button { padding: 14px 25px; font-size: 1.3em; margin: 16px auto; }
-      .social-icons { gap: 18px; margin: 25px 0 20px; }
+      h1 { font-size: 2.2em; }
+      .sottotitolo { font-size: 1.1em; }
     }
   </style>
 </head>
 
 <body>
 
-  <div class="overlay">
+  <div class="container">
     <img class="logo" src="https://github.com/lamesolashop/la-mesola/blob/main/logo.png?raw=true" alt="Logo La Mesola" />
     <h1>La Mesola</h1>
-    <p class="sottotitolo"><span class="highlight">G</span>in e <span class="highlight">A</span>mari artigianali dal cuore del Delta del Po</p>
+    <p class="sottotitolo">Gin e Amari artigianali dal cuore del Delta del Po</p>
 
-    <!-- Questo contenitore verrà popolato dinamicamente -->
-    <div class="social-icons" id="social-icons">
-        <!-- Le icone social appariranno qui -->
+    <div class="button-list">
+        <!-- I pulsanti principali del tuo hub -->
+        <a href="https://lamesola.automaita.it/negozio/" class="button" target="_blank"><i class="fa-solid fa-store"></i> Esplora il Nostro Shop</a>
+        <a href="https://lamesola.automaita.it/blog/" class="button" target="_blank"><i class="fa-solid fa-newspaper"></i> Ultime Ricette e Storie dal Blog</a>
+        <a href="https://lamesola.automaita.it/assistente-chat/" class="button" target="_blank"><i class="fa-solid fa-robot"></i> Parla con Sara, la nostra AI</a>
+        <a href="https://lamesola.automaita.it/chi-siamo/" class="button" target="_blank"><i class="fa-solid fa-leaf"></i> La Nostra Storia</a>
     </div>
 
-    <!-- Pulsanti collegati alle nuove pagine HTML -->
-    <a href="shop.html" class="button"><span class="highlight">S</span>hop</a>
-    <a href="blog.html" class="button"><span class="highlight">B</span>log</a>
-    <a href="storia.html" class="button"><span class="highlight">L</span>a Nostra Storia</a>
-    <a href="privacy.html" class="button">Politica Resi e Privacy</a>
+    <!-- Icone social (verranno popolate dallo script se lo usi, altrimenti puoi inserirle manualmente) -->
+    <div class="social-icons" id="social-icons">
+        <!-- Esempio di link manuali se lo script non è attivo -->
+        <!-- <a href="URL_INSTAGRAM" target="_blank"><i class="fa-brands fa-instagram"></i></a> -->
+        <!-- <a href="URL_FACEBOOK" target="_blank"><i class="fa-brands fa-facebook"></i></a> -->
+    </div>
   </div>
 
   <script>
+    // Lascia questo script se vuoi continuare a usare il caricamento dinamico dei social.
+    // Se preferisci inserire i link social manualmente nell'HTML, puoi anche rimuovere tutta questa parte.
     document.addEventListener("DOMContentLoaded", async () => {
-      // Definisci l'URL della tua API Apps Script
-      const SCRIPT_URL = 'URL_DELLA_TUA_API_DA_APPS_SCRIPT'; // <-- INCOLLA QUI L'URL
+      // Sostituisci con il tuo URL reale di Apps Script
+      const SCRIPT_URL = 'URL_DELLA_TUA_API_DA_APPS_SCRIPT'; 
+
+      // Se non hai un'API, non fa nulla.
+      if (SCRIPT_URL === 'URL_DELLA_TUA_API_DA_APPS_SCRIPT') return;
 
       try {
-        // Chiama l'API per ottenere le info del sito (link social, etc.)
         const response = await fetch(SCRIPT_URL);
         if (!response.ok) return; 
         const data = await response.json();
@@ -92,26 +149,15 @@
           const socialContainer = document.getElementById('social-icons');
           let iconsHtml = '';
           
-          if (data.siteInfo.linkIG && data.siteInfo.linkIG !== '#') {
-            iconsHtml += `<a href="${data.siteInfo.linkIG}" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a>`;
-          }
-          if (data.siteInfo.linkFB && data.siteInfo.linkFB !== '#') {
-            iconsHtml += `<a href="${data.siteInfo.linkFB}" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-facebook"></i></a>`;
-          }
-           if (data.siteInfo.linkYT && data.siteInfo.linkYT !== '#') {
-            iconsHtml += `<a href="${data.siteInfo.linkYT}" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-youtube"></i></a>`;
-          }
-          if (data.siteInfo.linkPinterest && data.siteInfo.linkPinterest !== '#') {
-            iconsHtml += `<a href="${data.siteInfo.linkPinterest}" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-pinterest"></i></a>`;
-          }
-          // Potresti aggiungere anche TikTok qui se lo aggiungi al foglio Info
+          if (data.siteInfo.linkIG) iconsHtml += `<a href="${data.siteInfo.linkIG}" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a>`;
+          if (data.siteInfo.linkFB) iconsHtml += `<a href="${data.siteInfo.linkFB}" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-facebook"></i></a>`;
+          if (data.siteInfo.linkYT) iconsHtml += `<a href="${data.siteInfo.linkYT}" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-youtube"></i></a>`;
+          if (data.siteInfo.linkPinterest) iconsHtml += `<a href="${data.siteInfo.linkPinterest}" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-pinterest"></i></a>`;
           
           socialContainer.innerHTML = iconsHtml;
         }
       } catch (error) {
         console.error("Impossibile caricare i link social:", error);
-        // In caso di errore, le icone semplicemente non appaiono.
-        document.getElementById('social-icons').innerHTML = '';
       }
     });
   </script>
