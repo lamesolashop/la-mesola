@@ -68,7 +68,7 @@
       display: block;
       padding: 16px;
       border: 2px solid var(--primary-color);
-      border-radius: 50px; /* Pulsanti più arrotondati e moderni */
+      border-radius: 50px;
       text-decoration: none;
       color: var(--primary-color);
       font-size: 1.1em;
@@ -114,52 +114,24 @@
     <h1>La Mesola</h1>
     <p class="sottotitolo">Gin e Amari artigianali dal cuore del Delta del Po</p>
 
+    <!-- ### SEZIONE PULSANTI - AGGIORNATA CON I TUOI LINK ### -->
     <div class="button-list">
-        <!-- I pulsanti principali del tuo hub -->
-        <a href="https://lamesola.automaita.it/negozio/" class="button" target="_blank"><i class="fa-solid fa-store"></i> Esplora il Nostro Shop</a>
-        <a href="https://lamesola.automaita.it/blog/" class="button" target="_blank"><i class="fa-solid fa-newspaper"></i> Ultime Ricette e Storie dal Blog</a>
-        <a href="https://lamesola.automaita.it/assistente-chat/" class="button" target="_blank"><i class="fa-solid fa-robot"></i> Parla con Sara, la nostra AI</a>
-        <a href="https://lamesola.automaita.it/chi-siamo/" class="button" target="_blank"><i class="fa-solid fa-leaf"></i> La Nostra Storia</a>
+        <a href="https://lamesola.automaita.it/shop/" class="button" target="_blank"><i class="fa-solid fa-store"></i> Shop Online</a>
+        <a href="https://lamesola.automaita.it/blog/" class="button" target="_blank"><i class="fa-solid fa-newspaper"></i> Blog: Ricette e Storie</a>
+        <a href="https://lamesola.automaita.it/assistente-chat/" class="button" target="_blank"><i class="fa-solid fa-robot"></i> Chiedi a Sara, la nostra AI</a>
+        <a href="https://lamesola.automaita.it/" class="button" target="_blank"><i class="fa-solid fa-house"></i> Visita il Sito Completo</a>
     </div>
 
-    <!-- Icone social (verranno popolate dallo script se lo usi, altrimenti puoi inserirle manualmente) -->
+    <!-- Icone social (possono essere popolate dinamicamente o inserite a mano) -->
     <div class="social-icons" id="social-icons">
-        <!-- Esempio di link manuali se lo script non è attivo -->
-        <!-- <a href="URL_INSTAGRAM" target="_blank"><i class="fa-brands fa-instagram"></i></a> -->
-        <!-- <a href="URL_FACEBOOK" target="_blank"><i class="fa-brands fa-facebook"></i></a> -->
+        <!-- Inserisci qui i link ai tuoi social se li vuoi fissi -->
+        <!-- Esempio: <a href="https://instagram.com/tuoprofilo" target="_blank"><i class="fa-brands fa-instagram"></i></a> -->
     </div>
   </div>
 
+  <!-- Lo script per i social può essere rimosso se inserisci i link manualmente -->
   <script>
-    // Lascia questo script se vuoi continuare a usare il caricamento dinamico dei social.
-    // Se preferisci inserire i link social manualmente nell'HTML, puoi anche rimuovere tutta questa parte.
-    document.addEventListener("DOMContentLoaded", async () => {
-      // Sostituisci con il tuo URL reale di Apps Script
-      const SCRIPT_URL = 'URL_DELLA_TUA_API_DA_APPS_SCRIPT'; 
-
-      // Se non hai un'API, non fa nulla.
-      if (SCRIPT_URL === 'URL_DELLA_TUA_API_DA_APPS_SCRIPT') return;
-
-      try {
-        const response = await fetch(SCRIPT_URL);
-        if (!response.ok) return; 
-        const data = await response.json();
-        
-        if (data && data.siteInfo) {
-          const socialContainer = document.getElementById('social-icons');
-          let iconsHtml = '';
-          
-          if (data.siteInfo.linkIG) iconsHtml += `<a href="${data.siteInfo.linkIG}" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a>`;
-          if (data.siteInfo.linkFB) iconsHtml += `<a href="${data.siteInfo.linkFB}" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-facebook"></i></a>`;
-          if (data.siteInfo.linkYT) iconsHtml += `<a href="${data.siteInfo.linkYT}" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-youtube"></i></a>`;
-          if (data.siteInfo.linkPinterest) iconsHtml += `<a href="${data.siteInfo.linkPinterest}" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-pinterest"></i></a>`;
-          
-          socialContainer.innerHTML = iconsHtml;
-        }
-      } catch (error) {
-        console.error("Impossibile caricare i link social:", error);
-      }
-    });
+    // Questo script è opzionale.
   </script>
 
 </body>
