@@ -1,138 +1,68 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>La Mesola - Gin e Amari Artigianali</title>  
-
-  <!-- Font Merienda e Font Awesome per le icone -->
-  <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@400;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
-
-  <style>
-    :root {
-      --primary-color: #E0E0E0; /* Bianco sporco per il        testo */  
-      --accent-color: #87CEEB; /* Azzurro chiaro per hover e dettagli */
-      --bg-overlay: rgba(15, 23, 42, 0.85); /* Blu scuro quasi nero, più elegante */
-    }
-
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-
-    body {
-      font-family: 'Poppins', sans-serif; /* Usiamo Poppins per i pulsanti, più leggibile */
-      background: url('https://makexp.it//xstore_temp/p,it,2025,00,comune_di_mesola,x,9574,giovanni_crivellari.jpg') no-repeat center center fixed;
-      background-size: cover;
-      color: var(--primary-color);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      padding: 20px;
-    }
-    .container {
-      background: var(--bg-overlay);
-      backdrop-filter: blur(5px); /* Effetto vetro smerigliato per lo sfondo */
-      padding: 40px 30px;
-      max-width: 600px;
-      width: 100%;
-      margin: 0 auto;
-      border-radius: 20px;
-      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-      border: 1px solid rgba(255, 255, 255, 0.18);
-      text-align: center;
-    }
-    .logo {
-      width: 120px; height: 120px; object-fit: cover;
-      border-radius: 50%;
-      border: 3px solid var(--accent-color);
-      margin-bottom: 20px;
-      box-shadow: 0 0 15px rgba(135, 206, 235, 0.5);
-    }
-    h1 {
-      font-family: 'Merienda', cursive;
-      font-size: 2.8em;
-      margin-bottom: 10px;
-    }
-    .sottotitolo {
-      font-size: 1.2em;
-      margin-bottom: 30px;
-      line-height: 1.5;
-      opacity: 0.9;
-    }
-    .button-list {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-    .button {
-      display: block;
-      padding: 16px;
-      border: 2px solid var(--primary-color);
-      border-radius: 50px;
-      text-decoration: none;
-      color: var(--primary-color);
-      font-size: 1.1em;
-      font-weight: 600;
-      transition: all 0.3s ease;
-      position: relative;
-      overflow: hidden;
-    }
-    .button:hover {
-      background: var(--accent-color);
-      color: var(--bg-overlay);
-      border-color: var(--accent-color);
-      transform: translateY(-2px);
-      box-shadow: 0 4px 15px rgba(135, 206, 235, 0.3);
-    }
-    .button i {
-      margin-right: 10px;
-    }
-    .social-icons {
-      display: flex; justify-content: center;
-      gap: 25px; margin-top: 40px;
-    }
-    .social-icons a {
-      color: var(--primary-color);
-      font-size: 1.8em;
-      transition: all 0.3s ease;
-    }
-    .social-icons a:hover {
-      color: var(--accent-color);
-      transform: scale(1.2);
-    }
-    @media (max-width: 768px) {
-      h1 { font-size: 2.2em; }
-      .sottotitolo { font-size: 1.1em; }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Bottega Del Delta - Link Utili</title>
+    
+    <!-- Stili e Font -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Icone Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
 </head>
-
 <body>
 
-  <div class="container">
-    <img class="logo" src="https://github.com/lamesolashop/la-mesola/blob/main/logo.png?raw=true" alt="Logo La Mesola" />
-    <h1>La Mesola</h1>
-    <p class="sottotitolo">Gin e Amari artigianali dal cuore del Delta del Po</p>
-
-    <!-- ### SEZIONE PULSANTI - AGGIORNATA CON I TUOI LINK ### -->
-    <div class="button-list">
-        <a href="https://lamesola.automaita.it/negozio/?utm_source=instagram&utm_medium=social&utm_campaign=link-in-bio" class="button" target="_blank"><i class="fa-solid fa-store"></i> Shop Online</a>
-        <a href="https://lamesola.automaita.it/blog/?utm_source=instagram&utm_medium=social&utm_campaign=link-in-bio" class="button" target="_blank"><i class="fa-solid fa-newspaper"></i> Blog: Ricette e Storie</a>
-        <a href="https://lamesola.automaita.it/assistente-chat/?utm_source=instagram&utm_medium=social&utm_campaign=link-in-bio" class="button" target="_blank"><i class="fa-solid fa-robot"></i> Chiedi a Sara, la nostra AI</a>
-        <a href="https://lamesola.automaita.it/?utm_source=instagram&utm_medium=social&utm_campaign=link-in-bio" class="button" target="_blank"><i class="fa-solid fa-house"></i> Visita il Sito Completo</a>
+    <!-- Sfondo Video -->
+    <div class="video-background">
+        <video autoplay muted loop playsinline>
+            <source src="https://videos.pexels.com/video-files/5126545/5126545-uhd_2732_1440_24fps.mp4" type="video/mp4">
+            Il tuo browser non supporta i video.
+        </video>
     </div>
 
-    <!-- Icone social (possono essere popolate dinamicamente o inserite a mano) -->
-    <div class="social-icons" id="social-icons">
-        <!-- Inserisci qui i link ai tuoi social se li vuoi fissi -->
-        <!-- Esempio: <a href="https://instagram.com/tuoprofilo" target="_blank"><i class="fa-brands fa-instagram"></i></a> -->
-    </div>
-  </div>
+    <!-- Contenuto Principale -->
+    <main class="container">
+        <header>
+            <img src="https://labottegadeldelta.it/wp-content/uploads/2025/07/Flux_Dev_Create_a_sophisticated_and_organic_typographic_logo_w_1.jpg" alt="Logo La Bottega Del Delta" class="logo">
+            <h1>La Bottega Del Delta</h1>
+            <p class="subtitle">L’essenza di un territorio unico, direttamente a casa tua. Scopri, assapora, ama.</p>
+        </header>
 
-  <!-- Lo script per i social può essere rimosso se inserisci i link manualmente -->
-  <script>
-    // Questo script è opzionale.
-  </script>
+        <div class="links-container">
+            <!-- ### PERSONALIZZA QUESTE SCHEDE ### -->
+            
+            <a href="https://labottegadeldelta.it/negozio/" class="link-card" target="_blank" rel="noopener noreferrer">
+                <i class="fa-solid fa-store card-icon"></i>
+                <div class="card-content">
+                    <h3>Visita il nostro Negozio</h3>
+                    <p>Scopri distillati e prodotti tipici del Delta del Po.</p>
+                </div>
+                <i class="fa-solid fa-arrow-right arrow-icon"></i>
+            </a>
+
+            <a href="https://labottegadeldelta.it/blog/" class="link-card" target="_blank" rel="noopener noreferrer">
+                <i class="fa-solid fa-newspaper card-icon"></i>
+                <div class="card-content">
+                    <h3>Leggi le nostre Storie</h3>
+                    <p>Ricette, tradizioni e racconti dal nostro territorio.</p>
+                </div>
+                <i class="fa-solid fa-arrow-right arrow-icon"></i>
+            </a>
+        </div>
+        
+        <!-- Icone Social -->
+        <footer class="social-icons">
+            <!-- Inserisci i link ai tuoi social -->
+            <a href="INSERISCI_URL_INSTAGRAM" target="_blank" aria-label="Instagram" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="INSERISCI_URL_FACEBOOK" target="_blank" aria-label="Facebook" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="INSERISCI_URL_TIKTOK" target="_blank" aria-label="TikTok" title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+            <a href="INSERISCI_URL_PINTEREST" target="_blank" aria-label="Pinterest" title="Pinterest"><i class="fa-brands fa-pinterest"></i></a>
+        </footer>
+    </main>
 
 </body>
 </html>
